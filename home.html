@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Durga Venkata Prasad Rapeti - Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- AOS Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">Durga Venkata Prasad Rapeti</div>
+      <ul class="nav-links">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-toggle" id="nav-toggle">&#9776;</div>
+    </nav>
+  </header>
+  <main>
+    <!-- Home Section -->
+    <section id="home" class="section home-section">
+      <div class="container home-container" data-aos="fade-up">
+        <div class="intro-text">
+          <h1>Hi, I'm <span class="highlight-name">Durga Venkata Prasad Rapeti</span></h1>
+          <h2 class="typing-text" id="typing-text"></h2>
+          <button class="btn contact-btn" onclick="scrollToContact()">Contact Me</button>
+          <div class="social-icons">
+            <a href="https://www.linkedin.com/in/durga-venkata-prasad-rapeti-b154022b7/" target="_blank" aria-label="LinkedIn" class="social-link">LinkedIn</a>
+            <a href="https://github.com/Rdvprasad36/" target="_blank" aria-label="GitHub" class="social-link">GitHub</a>
+            <a href="https://www.codechef.com/users/rdvprasad36" target="_blank" aria-label="CodeChef" class="social-link">CodeChef</a>
+            <a href="https://leetcode.com/rdvprasad36/" target="_blank" aria-label="LeetCode" class="social-link">LeetCode</a>
+            <a href="https://www.instagram.com/rdvprasad36/" target="_blank" aria-label="Instagram" class="social-link">Instagram</a>
+          </div>
+        </div>
+        <div class="intro-image">
+          <div class="blob"></div>
+          <img src="profile.png" alt="Profile Picture" />
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section" data-aos="fade-right">
+      <div class="container">
+        <h2>Objective</h2>
+        <p class="typing-paragraph">
+          As a highly motivated second-year student in the Artificial Intelligence and Data Science department, I am passionate about programming and developing innovative solutions. My keen interest in AI and my dedication to honing my technical skills drive my ambition to contribute effectively in a dynamic and growth-oriented environment. I am eager to apply my knowledge and expertise in programming languages and development tools to real-world projects.
+        </p>
+        <h2>Contact Info</h2>
+        <ul class="contact-info">
+          <li>Phone: +91738612327</li>
+          <li>Email: <a href="mailto:rdvprasad36@gmail.com">rdvprasad36@gmail.com</a></li>
+          <li>Location: Chodavaram, Visakhapatnam-531023</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section" data-aos="fade-left">
+      <div class="container">
+        <h2>Technical Skills</h2>
+        <ul class="skills-list">
+          <li>Programming Languages: Java (Introductory), Python (Introductory), C (Practitioner)</li>
+          <li>Data Structures & Algorithms (C, Java)</li>
+          <li>Database Management: Relational DBMS</li>
+          <li>Tools: Jupyter Notebook, Pandas, NumPy, Scikit-learn</li>
+          <li>Currently learning: Full stack development, AI & Machine Learning</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section" data-aos="fade-right">
+      <div class="container">
+        <h2>Experience</h2>
+        <div class="experience-item">
+          <h3>Google Android Developer Intern</h3>
+          <p>Indian Edu Program by Google Developers (Eduskills-AICTE)</p>
+          <p><em>October 2024 - December 2024</em></p>
+          <ul>
+            <li>Completed a 10-week internship focusing on Android development.</li>
+            <li>Gained hands-on experience in various development concepts.</li>
+            <li>Supported by India Edu Program and Google for Developers.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section" data-aos="fade-left">
+      <div class="container">
+        <h2>Projects</h2>
+        <div id="project-gallery" class="project-gallery">
+          <!-- Dynamic project cards will be inserted here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section" data-aos="fade-up">
+      <div class="container">
+        <h2>Contact Me</h2>
+        <form id="contact-form" novalidate>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required placeholder="Your full name" />
+            <span class="error-message" id="name-error"></span>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="Your email address" />
+            <span class="error-message" id="email-error"></span>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Write your message here"></textarea>
+            <span class="error-message" id="message-error"></span>
+          </div>
+          <button type="submit" class="btn submit-btn">Send Message</button>
+          <div id="form-status" class="form-status"></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>- Durga Venkata Prasad Rapeti- All rights reserved.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="script.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  </script>
+</body>
+</html>
