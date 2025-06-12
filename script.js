@@ -58,40 +58,37 @@ function scrollToContact() {
   document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
 }
 
-// Load projects dynamically from GitHub repos (example)
-async function loadProjects() {
+// Load projects dynamically - replaced with static projects
+function loadProjects() {
   const gallery = document.getElementById('project-gallery');
-  gallery.innerHTML = '<p>Loading projects...</p>';
+  gallery.innerHTML = '';
 
-  try {
-    const response = await fetch('https://api.github.com/users/Rdvprasad36/repos');
-    const repos = await response.json();
+  const projects = [
+    {
+      name: 'AI Chatbot',
+      description: 'Developed an AI-powered chatbot using natural language processing techniques to assist users with common queries.'
+    },
+    {
+      name: 'Personal Blog Website',
+      description: 'Created a responsive personal blog website using HTML, CSS, and JavaScript to share articles and tutorials.'
+    },
+    {
+      name: 'Data Analysis Tool',
+      description: 'Built a data analysis tool in Python to process and visualize large datasets for business insights.'
+    }
+  ];
 
-    gallery.innerHTML = '';
-    repos.slice(0, 6).forEach(repo => {
-      const card = document.createElement('div');
-      card.className = 'project-card';
-
-      // Use repo description or fallback text
-      const description = repo.description ? repo.description : 'No description available';
-
-      // Use repo homepage or fallback image placeholder
-      const imageUrl = repo.homepage ? repo.homepage : 'https://via.placeholder.com/300x160?text=Project+Image';
-
-      card.innerHTML = `
-        <img src="${imageUrl}" alt="${repo.name}" class="project-image" />
-        <div class="project-content">
-          <h3>${repo.name}</h3>
-          <p>${description}</p>
-          <a href="${repo.html_url}" target="_blank" rel="noopener noreferrer">View Repo</a>
-        </div>
-      `;
-      gallery.appendChild(card);
-    });
-  } catch (error) {
-    gallery.innerHTML = '<p>Failed to load projects.</p>';
-    console.error('Error loading projects:', error);
-  }
+  projects.forEach(project => {
+    const card = document.createElement('div');
+    card.className = 'project-card';
+    card.innerHTML = `
+      <div class="project-content">
+        <h3>${project.name}</h3>
+        <p>${project.description}</p>
+      </div>
+    `;
+    gallery.appendChild(card);
+  });
 }
 
 // Contact form validation and submission simulation
